@@ -1,4 +1,4 @@
-# Org Chart Sandbox
+# Leadership Orgchart Planning Sandbox
 
 A drag-and-drop tool for mocking up next semester's org structure for a student org: people, seats, teams, who reports
 to whom. Start from today's org, rearrange it, and compare against what exists now.
