@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Org Chart Sandbox</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="toolbar">
+  <button id="btnPool" title="Show / hide the People list (P)">&#9776; People</button>
+  <div class="brand"><span class="logo">TECH <b>PLUS</b></span><span class="sub">Org Chart Sandbox</span></div>
+
+  <div class="group">
+    <select id="scenarioSelect" title="Switch mock scenario"></select>
+    <button id="btnNew" title="Start a new mock from today's org">New</button>
+    <button id="btnDup" title="Duplicate this mock">Duplicate</button>
+    <button id="btnRename">Rename</button>
+    <button id="btnDelete">Delete</button>
+  </div>
+
+  <div class="group">
+    <button id="btnUndo" title="Undo (Ctrl+Z)">&#8630; Undo</button>
+    <button id="btnRedo" title="Redo (Ctrl+Y)">&#8631; Redo</button>
+    <button id="btnBulk" title="Empty every seat of one level at once">Bulk &#9662;</button>
+    <button id="btnReset" title="Throw away this mock's changes and go back to today's org">Reset to today</button>
+  </div>
+
+  <div class="group">
+    <input id="search" type="search" placeholder="Find a person or team&hellip;" autocomplete="off">
+  </div>
+
+  <div class="group right">
+    <button id="btnChanges" class="primary" title="What's different from today's org">Changes vs. today</button>
+    <button id="btnExpand">Expand all</button>
+    <button id="btnCollapse">Collapse teams</button>
+    <button id="btnZoomOut" title="Zoom out">&minus;</button>
+    <button id="btnFit">Fit</button>
+    <button id="btnZoomIn" title="Zoom in">+</button>
+    <button id="btnExport" title="Save this mock as a .json file">Export</button>
+    <button id="btnImport" title="Load a mock from a .json file">Import</button>
+    <button id="btnPrint" title="Print or save as PDF">Print / PDF</button>
+    <input id="fileInput" type="file" accept=".json,application/json" hidden>
+  </div>
+</header>
+
+<main id="layout">
+  <aside id="pool">
+    <div class="pool-head">
+      <h2>People <span id="poolCount"></span></h2>
+      <label class="chk"><input type="checkbox" id="showAll"> Show everyone</label>
+      <button id="btnPoolHide" title="Collapse this panel (P)" style="padding:2px 8px">&laquo;</button>
+    </div>
+    <p class="hint">Drag someone onto a seat to place or swap them. Drag a person here to unassign them.</p>
+    <div id="poolList"></div>
+  </aside>
+
+  <section id="viewport">
+    <div id="content"></div>
+    <div id="statusbar"></div>
+  </section>
+</main>
+
+<div id="menu" class="menu" hidden></div>
+<div id="modalWrap" class="modal-wrap" hidden><div id="modal" class="modal"></div></div>
+<datalist id="titleOptions"></datalist>
+
+<script src="data.js"></script>
+<script src="presets.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+# Allowlist: ignore everything, then re-include only the code. Data and secrets can never be committed by accident.
+*
+!/.gitignore
+!README.md
+!index.html
+!style.css
+!app.js
+!start.bat
+!refresh_data.py
+!push_to_cloud.py
+!make_web.py
+!supabase_schema.sql
+!web/
+!web/index.html
+!web/style.css
+!web/app.js
+!web/boot.js
+!web/config.example.js
+!web/vercel.json
+# NOT included on purpose: data.js, presets.js, avatars/, *.json drafts, cloud.env, web/config.js, .vercel/
